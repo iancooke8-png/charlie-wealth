@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie - AI Wealth Assistant</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #1a2332 0%, #2d3f54 50%, #1a2332 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            animation: fadeIn 1.2s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, #a8b8d8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.7;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            opacity: 0.6;
+            max-width: 500px;
+            margin: 0 auto 3rem;
+        }
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .pulse {
+            width: 8px; height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            font-size: 0.75rem;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">C</div>
+        <h1>Charlie</h1>
+        <p class="tagline">Intelligent Wealth Assistant</p>
+        <p class="description">Conversational AI for wealth management. Built to understand your financial world and help you navigate it naturally.</p>
+        <div class="status">
+            <span class="pulse"></span>
+            Currently in development
+        </div>
+    </div>
+    <div class="footer">Built by Charlie herself</div>
+</body>
+</html>
