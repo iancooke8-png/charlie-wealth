@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://charliewealth.com">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23faf8f5'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='serif' font-size='68' font-weight='700'%3E%3Ctspan fill='%23da7756'%3E%7B%3C/tspan%3E%3Ctspan fill='%232d2a26'%3EC%3C/tspan%3E%3Ctspan fill='%23da7756'%3E%7D%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23faf8f5'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='serif' font-size='68' font-weight='700'%3E%3Ctspan fill='%23417b5a'%3E%7B%3C/tspan%3E%3Ctspan fill='%232d2a26'%3EC%3C/tspan%3E%3Ctspan fill='%23417b5a'%3E%7D%3C/tspan%3E%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -21,17 +21,17 @@
             --bg-white: #ffffff;
             --bg-warm: #f5f2ee;
             --bg-warm-alt: #f0ece6;
-            --accent: #da7756;
-            --accent-light: #e8956e;
-            --accent-soft: rgba(218, 119, 86, 0.08);
-            --accent-glow: rgba(218, 119, 86, 0.12);
-            --accent-hover: #c4684a;
+            --accent: #417b5a;
+            --accent-light: #5a9973;
+            --accent-soft: rgba(65, 123, 90, 0.08);
+            --accent-glow: rgba(65, 123, 90, 0.10);
+            --accent-hover: #346647;
             --text-primary: #2d2a26;
             --text-secondary: #5c574f;
             --text-tertiary: #8a847a;
             --sage: #7c9a7e;
             --stone: #c4b5a2;
-            --copper: #b87a56;
+            --copper: #da7756;
             --card-shadow: 0 2px 20px rgba(45, 42, 38, 0.06);
             --card-shadow-hover: 0 8px 32px rgba(45, 42, 38, 0.1);
         }
@@ -132,7 +132,7 @@
         .nav-cta:hover {
             background: var(--accent-hover);
             transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(218, 119, 86, 0.25);
+            box-shadow: 0 4px 16px rgba(65, 123, 90, 0.25);
         }
 
         .nav-mobile {
@@ -225,7 +225,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 18rem;
             font-weight: 400;
-            color: rgba(218, 119, 86, 0.04);
+            color: rgba(65, 123, 90, 0.04);
             line-height: 1;
             pointer-events: none;
             animation: gentleFloat 12s ease-in-out infinite;
@@ -300,7 +300,7 @@
         .btn-primary:hover {
             background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(218, 119, 86, 0.25);
+            box-shadow: 0 6px 20px rgba(65, 123, 90, 0.25);
         }
 
         .btn-secondary {
@@ -652,7 +652,7 @@
         }
 
         .world-card:nth-child(2)::before {
-            background: var(--sage);
+            background: var(--copper);
         }
 
         .world-card:hover {
@@ -674,8 +674,8 @@
         }
 
         .world-card:nth-child(2) .card-icon {
-            background: rgba(124, 154, 126, 0.1);
-            color: var(--sage);
+            background: rgba(218, 119, 86, 0.08);
+            color: var(--copper);
         }
 
         .world-card h3 {
@@ -705,7 +705,7 @@
         }
 
         .world-card:first-child li i { color: var(--accent); }
-        .world-card:last-child li i { color: var(--sage); }
+        .world-card:last-child li i { color: var(--copper); }
 
         /* ═══════════════════════════════════════════════ */
         /* HOW IT WORKS                                    */
@@ -1181,12 +1181,12 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">Your Wealth, Expressed</span>
-                <h2 class="section-title">Everything in <span class="brand-brace">{</span>code<span class="brand-brace">}</span>.</h2>
+                <h2 class="section-title">Your whole world. One view.</h2>
             </div>
             <div class="products-grid reveal">
                 <div class="product-item">
                     <span class="product-mark"><span class="brand-brace">{</span>Portfolio<span class="brand-brace">}</span></span>
-                    <span class="product-desc">ISA, GIA, SIPP, Pension, Onshore Bonds, Offshore Bonds, Beneficiary</span>
+                    <span class="product-desc">Your investments</span>
                 </div>
                 <div class="product-item">
                     <span class="product-mark"><span class="brand-brace">{</span>Property<span class="brand-brace">}</span></span>
@@ -1202,7 +1202,7 @@
                 </div>
                 <div class="product-item">
                     <span class="product-mark"><span class="brand-brace">{</span>DocVault<span class="brand-brace">}</span></span>
-                    <span class="product-desc">Intelligent documents</span>
+                    <span class="product-desc">Your documents</span>
                 </div>
             </div>
         </div>
