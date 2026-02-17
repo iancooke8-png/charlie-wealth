@@ -1,1380 +1,2759 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{Charlie} Wealth | Intelligent Wealth Management</title>
+
     <meta name="description" content="Your wealth. Understood. The intelligent platform that brings together everything you own, everything you owe, and everything you need to know.">
+
     <meta property="og:title" content="{Charlie} Wealth | Intelligent Wealth Management">
+
     <meta property="og:description" content="Your wealth. Understood. See everything you own in one place. Intelligent by design.">
+
     <meta property="og:type" content="website">
+
     <meta property="og:url" content="https://charliewealth.com">
+
     <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23faf8f5'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='serif' font-size='68' font-weight='700'%3E%3Ctspan fill='%23417b5a'%3E%7B%3C/tspan%3E%3Ctspan fill='%232d2a26'%3EC%3C/tspan%3E%3Ctspan fill='%23417b5a'%3E%7D%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+
         :root {
+
             --bg-cream: #faf8f5;
+
             --bg-white: #ffffff;
+
             --bg-warm: #f5f2ee;
+
             --bg-warm-alt: #f0ece6;
+
             --accent: #417b5a;
+
             --accent-light: #5a9973;
+
             --accent-soft: rgba(65, 123, 90, 0.08);
+
             --accent-glow: rgba(65, 123, 90, 0.10);
+
             --accent-hover: #346647;
+
             --text-primary: #2d2a26;
+
             --text-secondary: #5c574f;
+
             --text-tertiary: #8a847a;
+
             --sage: #7c9a7e;
+
             --stone: #c4b5a2;
+
             --copper: #da7756;
+
             --card-shadow: 0 2px 20px rgba(45, 42, 38, 0.06);
+
             --card-shadow-hover: 0 8px 32px rgba(45, 42, 38, 0.1);
+
         }
+
+
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+
+
         html { scroll-behavior: smooth; }
 
+
+
         body {
+
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
             color: var(--text-primary);
+
             background: var(--bg-cream);
+
             line-height: 1.7;
+
             -webkit-font-smoothing: antialiased;
+
         }
+
+
 
         .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* BRAND MARK                                      */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .brand-mark { font-family: 'Playfair Display', serif; font-weight: 700; }
+
         .brand-brace { color: var(--accent); font-weight: 400; }
+
         .product-mark { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* NAVIGATION                                      */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .nav {
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             right: 0;
+
             z-index: 1000;
+
             padding: 20px 0;
+
             transition: all 0.4s ease;
+
         }
+
+
 
         .nav-scrolled {
+
             background: rgba(250, 248, 245, 0.95);
+
             backdrop-filter: blur(20px);
+
             -webkit-backdrop-filter: blur(20px);
+
             padding: 12px 0;
+
             box-shadow: 0 1px 12px rgba(45, 42, 38, 0.06);
+
         }
+
+
 
         .nav-inner {
+
             max-width: 1140px;
+
             margin: 0 auto;
+
             padding: 0 24px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
         }
 
+
+
         .nav-brand {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 1.35rem;
+
             font-weight: 700;
+
             color: var(--text-primary);
+
             text-decoration: none;
+
         }
+
+
 
         .nav-brand .brand-brace { font-weight: 400; }
 
+
+
         .nav-links {
+
             display: flex;
+
             align-items: center;
+
             gap: 36px;
+
         }
 
+
+
         .nav-links a {
+
             text-decoration: none;
+
             color: var(--text-secondary);
+
             font-size: 0.9rem;
+
             font-weight: 500;
+
             transition: color 0.2s;
+
             letter-spacing: 0.01em;
+
         }
+
+
 
         .nav-links a:hover { color: var(--text-primary); }
 
+
+
         .nav-cta {
+
             display: inline-block;
+
             background: var(--accent);
+
             color: white !important;
+
             padding: 10px 24px;
+
             border-radius: 8px;
+
             text-decoration: none;
+
             font-weight: 600;
+
             font-size: 0.88rem;
+
             transition: all 0.3s ease;
+
             letter-spacing: 0.01em;
+
         }
+
+
 
         .nav-cta:hover {
+
             background: var(--accent-hover);
+
             transform: translateY(-1px);
+
             box-shadow: 0 4px 16px rgba(65, 123, 90, 0.25);
+
         }
+
+
 
         .nav-mobile {
+
             display: none;
+
             background: none;
+
             border: none;
+
             cursor: pointer;
+
             padding: 8px;
+
             flex-direction: column;
+
             gap: 5px;
+
         }
+
+
 
         .nav-mobile span {
+
             display: block;
+
             width: 22px;
+
             height: 2px;
+
             background: var(--text-primary);
+
             border-radius: 2px;
+
             transition: all 0.3s ease;
+
         }
 
+
+
         .mobile-menu {
+
             display: none;
+
             position: fixed;
+
             top: 0;
+
             right: -100%;
+
             width: 280px;
+
             height: 100vh;
+
             background: var(--bg-cream);
+
             padding: 80px 32px 32px;
+
             transition: right 0.3s ease;
+
             box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+
             z-index: 999;
+
         }
+
+
 
         .mobile-menu.open { right: 0; }
 
+
+
         .mobile-menu a {
+
             display: block;
+
             padding: 16px 0;
+
             color: var(--text-primary);
+
             text-decoration: none;
+
             font-size: 1.05rem;
+
             font-weight: 500;
+
             border-bottom: 1px solid var(--bg-warm-alt);
+
         }
 
+
+
         .mobile-overlay {
+
             display: none;
+
             position: fixed;
+
             inset: 0;
+
             background: rgba(0,0,0,0.3);
+
             z-index: 998;
+
             opacity: 0;
+
             transition: opacity 0.3s;
+
         }
+
+
 
         .mobile-overlay.open { opacity: 1; }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* HERO                                            */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .hero {
+
             min-height: 100vh;
+
             display: flex;
+
             align-items: center;
+
             position: relative;
+
             overflow: hidden;
+
             background: linear-gradient(160deg, var(--bg-cream) 0%, #f7f3ee 40%, var(--bg-warm) 100%);
+
         }
+
+
 
         .hero::before {
+
             content: '';
+
             position: absolute;
+
             top: -20%;
+
             right: -10%;
+
             width: 600px;
+
             height: 600px;
+
             background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+
             border-radius: 50%;
+
             animation: gentlePulse 8s ease-in-out infinite;
+
         }
+
+
 
         .hero::after {
+
             content: '{C}';
+
             position: absolute;
+
             bottom: 8%;
+
             right: 8%;
+
             font-family: 'Playfair Display', serif;
+
             font-size: 18rem;
+
             font-weight: 400;
+
             color: rgba(65, 123, 90, 0.04);
+
             line-height: 1;
+
             pointer-events: none;
+
             animation: gentleFloat 12s ease-in-out infinite;
+
         }
+
+
 
         @keyframes gentlePulse {
+
             0%, 100% { transform: scale(1); opacity: 0.6; }
+
             50% { transform: scale(1.1); opacity: 1; }
+
         }
+
+
 
         @keyframes gentleFloat {
+
             0%, 100% { transform: translateY(0px); }
+
             50% { transform: translateY(-20px); }
+
         }
+
+
 
         .hero-content {
+
             position: relative;
+
             z-index: 1;
+
             max-width: 680px;
+
             padding: 120px 0 80px;
+
         }
+
+
 
         .hero-label {
+
             display: inline-block;
+
             font-size: 0.8rem;
+
             font-weight: 600;
+
             letter-spacing: 0.12em;
+
             text-transform: uppercase;
+
             color: var(--accent);
+
             margin-bottom: 24px;
+
         }
+
+
 
         .hero-title {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 3.8rem;
+
             font-weight: 700;
+
             line-height: 1.12;
+
             margin-bottom: 24px;
+
             color: var(--text-primary);
+
         }
+
+
 
         .hero-subtitle {
+
             font-size: 1.2rem;
+
             color: var(--text-secondary);
+
             margin-bottom: 40px;
+
             line-height: 1.8;
+
             max-width: 540px;
+
         }
+
+
 
         .hero-cta {
+
             display: flex;
+
             gap: 16px;
+
             flex-wrap: wrap;
+
         }
+
+
 
         .btn-primary {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             background: var(--accent);
+
             color: white;
+
             padding: 14px 32px;
+
             border-radius: 10px;
+
             text-decoration: none;
+
             font-weight: 600;
+
             font-size: 0.95rem;
+
             transition: all 0.3s ease;
+
             border: none;
+
             cursor: pointer;
+
         }
+
+
 
         .btn-primary:hover {
+
             background: var(--accent-hover);
+
             transform: translateY(-2px);
+
             box-shadow: 0 6px 20px rgba(65, 123, 90, 0.25);
+
         }
+
+
 
         .btn-secondary {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             background: transparent;
+
             color: var(--text-primary);
+
             padding: 14px 32px;
+
             border-radius: 10px;
+
             text-decoration: none;
+
             font-weight: 600;
+
             font-size: 0.95rem;
+
             transition: all 0.3s ease;
+
             border: 2px solid var(--bg-warm-alt);
+
         }
+
+
 
         .btn-secondary:hover {
+
             border-color: var(--accent);
+
             color: var(--accent);
+
         }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* SECTION DEFAULTS                                */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         section { padding: 100px 0; }
 
+
+
         .section-label {
+
             font-size: 0.78rem;
+
             font-weight: 600;
+
             letter-spacing: 0.12em;
+
             text-transform: uppercase;
+
             color: var(--accent);
+
             margin-bottom: 16px;
+
         }
+
+
 
         .section-title {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 2.5rem;
+
             font-weight: 700;
+
             margin-bottom: 16px;
+
             line-height: 1.2;
+
         }
+
+
 
         .section-subtitle {
+
             font-size: 1.1rem;
+
             color: var(--text-secondary);
+
             max-width: 560px;
+
             line-height: 1.8;
+
         }
+
+
 
         .section-header {
+
             text-align: center;
+
             margin-bottom: 64px;
+
         }
+
+
 
         .section-header .section-subtitle {
+
             margin: 0 auto;
+
         }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* WHAT IS CHARLIE                                 */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .about-platform { background: var(--bg-white); }
 
+
+
         .about-grid {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 80px;
+
             align-items: center;
+
         }
+
+
 
         .about-text .section-subtitle { margin-bottom: 24px; }
 
+
+
         .about-points {
+
             list-style: none;
+
             padding: 0;
+
         }
+
+
 
         .about-points li {
+
             padding: 10px 0;
+
             display: flex;
+
             align-items: flex-start;
+
             gap: 12px;
+
             color: var(--text-secondary);
+
             font-size: 0.95rem;
+
         }
+
+
 
         .about-points li i {
+
             color: var(--accent);
+
             margin-top: 4px;
+
             font-size: 0.85rem;
+
         }
+
+
 
         /* Dashboard mock */
+
         .dashboard-mock {
+
             background: var(--bg-cream);
+
             border-radius: 20px;
+
             padding: 24px;
+
             box-shadow: var(--card-shadow);
+
             border: 1px solid rgba(0,0,0,0.04);
+
             position: relative;
+
         }
+
+
 
         .mock-topbar {
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             padding-bottom: 16px;
+
             border-bottom: 1px solid var(--bg-warm-alt);
+
             margin-bottom: 16px;
+
         }
+
+
 
         .mock-topbar-brand {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 0.85rem;
+
             font-weight: 700;
+
             color: var(--text-primary);
+
         }
+
+
 
         .mock-dots {
+
             display: flex;
+
             gap: 4px;
+
         }
 
+
+
         .mock-dots span {
+
             width: 8px;
+
             height: 8px;
+
             border-radius: 50%;
+
             background: var(--bg-warm-alt);
+
         }
+
+
 
         .mock-dots span:first-child { background: var(--accent-light); }
 
+
+
         .mock-body {
+
             display: grid;
+
             grid-template-columns: 140px 1fr 120px;
+
             gap: 16px;
+
             min-height: 200px;
+
         }
+
+
 
         .mock-nav {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 8px;
+
         }
+
+
 
         .mock-nav-item {
+
             height: 10px;
+
             background: var(--bg-warm-alt);
+
             border-radius: 4px;
+
             width: 80%;
+
         }
+
+
 
         .mock-nav-item.active {
+
             background: var(--accent-soft);
+
             width: 100%;
+
         }
+
+
 
         .mock-content {
+
             background: var(--bg-white);
+
             border-radius: 12px;
+
             padding: 16px;
+
         }
+
+
 
         .mock-chart {
+
             display: flex;
+
             align-items: flex-end;
+
             gap: 6px;
+
             height: 80px;
+
             margin-bottom: 12px;
+
         }
+
+
 
         .mock-bar {
+
             flex: 1;
+
             background: var(--accent-soft);
+
             border-radius: 4px 4px 0 0;
+
             transition: height 0.5s ease;
+
         }
+
+
 
         .mock-bar:nth-child(1) { height: 40%; }
+
         .mock-bar:nth-child(2) { height: 65%; }
+
         .mock-bar:nth-child(3) { height: 45%; background: var(--accent); opacity: 0.3; }
+
         .mock-bar:nth-child(4) { height: 80%; }
+
         .mock-bar:nth-child(5) { height: 55%; }
+
         .mock-bar:nth-child(6) { height: 70%; background: var(--accent); opacity: 0.2; }
+
         .mock-bar:nth-child(7) { height: 90%; }
+
         .mock-bar:nth-child(8) { height: 60%; }
 
+
+
         .mock-lines {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 8px;
+
         }
+
+
 
         .mock-line {
+
             height: 8px;
+
             background: var(--bg-warm);
+
             border-radius: 4px;
+
         }
+
+
 
         .mock-line:nth-child(1) { width: 100%; }
+
         .mock-line:nth-child(2) { width: 75%; }
+
         .mock-line:nth-child(3) { width: 90%; }
 
+
+
         .mock-charlie {
+
             background: var(--bg-white);
+
             border-radius: 12px;
+
             padding: 12px;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 8px;
+
         }
+
+
 
         .mock-charlie-header {
+
             font-size: 0.65rem;
+
             font-weight: 600;
+
             color: var(--accent);
+
             text-transform: uppercase;
+
             letter-spacing: 0.08em;
+
         }
 
+
+
         .mock-charlie-bubble {
+
             background: var(--accent-soft);
+
             border-radius: 8px;
+
             height: 24px;
+
         }
+
+
 
         .mock-charlie-bubble:nth-child(3) { width: 80%; }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* CAPABILITIES                                    */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .capabilities { background: var(--bg-cream); }
 
+
+
         .capability-grid {
+
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 24px;
+
         }
+
+
 
         .capability-card {
+
             background: var(--bg-white);
+
             padding: 36px;
+
             border-radius: 16px;
+
             border: 1px solid rgba(0,0,0,0.04);
+
             transition: all 0.3s ease;
+
             box-shadow: var(--card-shadow);
+
         }
+
+
 
         .capability-card:hover {
+
             transform: translateY(-4px);
+
             box-shadow: var(--card-shadow-hover);
+
         }
+
+
 
         .capability-icon {
+
             width: 48px;
+
             height: 48px;
+
             background: linear-gradient(135deg, var(--accent), var(--accent-light));
+
             border-radius: 12px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             color: white;
+
             font-size: 1.1rem;
+
             margin-bottom: 20px;
+
         }
+
+
 
         .capability-card h3 {
+
             font-size: 1.1rem;
+
             font-weight: 600;
+
             margin-bottom: 10px;
+
             color: var(--text-primary);
+
         }
+
+
 
         .capability-card p {
+
             color: var(--text-secondary);
+
             font-size: 0.92rem;
+
             line-height: 1.7;
+
         }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* PRODUCTS STRIP                                  */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .products {
+
             background: var(--bg-white);
+
             padding: 80px 0;
+
         }
+
+
 
         .products-grid {
+
             display: flex;
+
             justify-content: center;
+
             flex-wrap: wrap;
+
             gap: 32px;
+
         }
+
+
 
         .product-item {
+
             text-align: center;
+
             min-width: 140px;
+
         }
+
+
 
         .product-item .product-mark {
+
             display: block;
+
             margin-bottom: 6px;
+
         }
+
+
 
         .product-item .product-desc {
+
             font-size: 0.82rem;
+
             color: var(--text-tertiary);
+
             font-weight: 500;
+
         }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* YOUR WORLD SECTION (was advisers/clients)       */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .your-world { background: var(--bg-cream); }
 
+
+
         .world-grid {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 32px;
+
         }
+
+
 
         .world-card {
+
             background: var(--bg-white);
+
             border-radius: 20px;
+
             padding: 48px;
+
             box-shadow: var(--card-shadow);
+
             border: 1px solid rgba(0,0,0,0.04);
+
             transition: all 0.3s ease;
+
             position: relative;
+
             overflow: hidden;
+
         }
+
+
 
         .world-card::before {
+
             content: '';
+
             position: absolute;
+
             top: 0;
+
             left: 0;
+
             width: 4px;
+
             height: 100%;
+
             background: var(--accent);
+
             border-radius: 0 4px 4px 0;
+
         }
+
+
 
         .world-card:nth-child(2)::before {
+
             background: var(--copper);
+
         }
+
+
 
         .world-card:hover {
+
             transform: translateY(-2px);
+
             box-shadow: var(--card-shadow-hover);
+
         }
+
+
 
         .world-card .card-icon {
+
             width: 56px;
+
             height: 56px;
+
             background: var(--accent-soft);
+
             border-radius: 14px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 1.3rem;
+
             color: var(--accent);
+
             margin-bottom: 24px;
+
         }
+
+
 
         .world-card:nth-child(2) .card-icon {
+
             background: rgba(218, 119, 86, 0.08);
+
             color: var(--copper);
+
         }
+
+
 
         .world-card h3 {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 1.5rem;
+
             font-weight: 700;
+
             margin-bottom: 16px;
+
         }
+
+
 
         .world-card ul {
+
             list-style: none;
+
             padding: 0;
+
         }
+
+
 
         .world-card li {
+
             padding: 8px 0;
+
             color: var(--text-secondary);
+
             font-size: 0.93rem;
+
             display: flex;
+
             align-items: flex-start;
+
             gap: 10px;
+
         }
+
+
 
         .world-card li i {
+
             margin-top: 5px;
+
             font-size: 0.7rem;
+
         }
 
+
+
         .world-card:first-child li i { color: var(--accent); }
+
         .world-card:last-child li i { color: var(--copper); }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* HOW IT WORKS                                    */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .how-it-works { background: var(--bg-white); }
 
+
+
         .steps {
+
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 48px;
+
             max-width: 900px;
+
             margin: 0 auto;
+
             position: relative;
+
         }
 
+
+
         .steps::before {
+
             content: '';
+
             position: absolute;
+
             top: 32px;
+
             left: 15%;
+
             right: 15%;
+
             height: 2px;
+
             background: var(--bg-warm-alt);
+
         }
+
+
 
         .step { text-align: center; position: relative; }
 
+
+
         .step-number {
+
             width: 64px;
+
             height: 64px;
+
             border-radius: 50%;
+
             background: var(--bg-cream);
+
             border: 2px solid var(--accent);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-family: 'Playfair Display', serif;
+
             font-size: 1.5rem;
+
             font-weight: 700;
+
             color: var(--accent);
+
             margin: 0 auto 20px;
+
             position: relative;
+
             z-index: 1;
+
         }
+
+
 
         .step h3 {
+
             font-size: 1.1rem;
+
             font-weight: 600;
+
             margin-bottom: 8px;
+
         }
+
+
 
         .step p {
+
             color: var(--text-secondary);
+
             font-size: 0.9rem;
+
             line-height: 1.7;
+
         }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* MOBILE APP TEASER                               */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .mobile-teaser {
+
             background: var(--bg-cream);
+
             padding: 80px 0;
+
         }
+
+
 
         .mobile-teaser-inner {
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             gap: 48px;
+
             text-align: center;
+
         }
+
+
 
         .mobile-phone {
+
             width: 160px;
+
             height: 300px;
+
             background: var(--text-primary);
+
             border-radius: 28px;
+
             padding: 12px;
+
             box-shadow: var(--card-shadow-hover);
+
             flex-shrink: 0;
+
         }
+
+
 
         .mobile-phone-screen {
+
             width: 100%;
+
             height: 100%;
+
             background: var(--bg-cream);
+
             border-radius: 18px;
+
             padding: 16px 10px;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 8px;
+
         }
+
+
 
         .mobile-phone-brand {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 0.6rem;
+
             font-weight: 700;
+
             text-align: center;
+
             margin-bottom: 4px;
+
         }
+
+
 
         .mobile-phone-bar {
+
             height: 6px;
+
             background: var(--bg-warm-alt);
+
             border-radius: 3px;
+
         }
+
+
 
         .mobile-phone-bar.accent { background: var(--accent-soft); }
+
         .mobile-phone-bar:nth-child(3) { width: 70%; }
+
         .mobile-phone-bar:nth-child(5) { width: 85%; }
 
+
+
         .mobile-phone-card {
+
             background: var(--bg-white);
+
             border-radius: 8px;
+
             padding: 8px;
+
             margin-top: auto;
+
         }
 
+
+
         .mobile-phone-card-bar {
+
             height: 4px;
+
             background: var(--bg-warm-alt);
+
             border-radius: 2px;
+
             margin-bottom: 4px;
+
         }
+
+
 
         .mobile-phone-card-bar:last-child { width: 60%; margin-bottom: 0; }
 
+
+
         .mobile-teaser-text { max-width: 440px; }
 
+
+
         .mobile-teaser-text h2 {
+
             font-family: 'Playfair Display', serif;
+
             font-size: 2rem;
+
             font-weight: 700;
+
             margin-bottom: 16px;
+
         }
+
+
 
         .mobile-teaser-text p {
+
             color: var(--text-secondary);
+
             font-size: 1rem;
+
             line-height: 1.8;
+
         }
+
+
 
         .app-badges {
+
             display: flex;
+
             gap: 12px;
+
             margin-top: 24px;
+
             justify-content: center;
+
         }
+
+
 
         .app-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             background: var(--text-primary);
+
             color: white;
+
             padding: 10px 20px;
+
             border-radius: 10px;
+
             text-decoration: none;
+
             font-size: 0.8rem;
+
             font-weight: 500;
+
             transition: all 0.3s ease;
+
         }
 
+
+
         .app-badge:hover {
+
             transform: translateY(-2px);
+
             box-shadow: var(--card-shadow-hover);
+
         }
+
+
 
         .app-badge i { font-size: 1.2rem; }
 
-        /* ═══════════════════════════════════════════════ */
-        /* CTA SECTION                                     */
+
+
         /* ═══════════════════════════════════════════════ */
 
+        /* CTA SECTION                                     */
+
+        /* ═══════════════════════════════════════════════ */
+
+
+
         .cta-section {
+
             background: linear-gradient(160deg, var(--bg-warm) 0%, var(--bg-warm-alt) 100%);
+
             text-align: center;
+
             padding: 100px 0;
+
         }
+
+
 
         .cta-section .section-title { margin-bottom: 16px; }
 
+
+
         .cta-section .section-subtitle {
+
             margin: 0 auto 40px;
+
             text-align: center;
+
         }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* FOOTER                                          */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .footer {
+
             background: var(--text-primary);
+
             color: rgba(255,255,255,0.55);
+
             padding: 64px 0 24px;
+
         }
+
+
 
         .footer-grid {
+
             display: grid;
+
             grid-template-columns: 1.5fr 1fr 1fr;
+
             gap: 48px;
+
             margin-bottom: 48px;
+
         }
+
+
 
         .footer-brand .nav-brand {
+
             color: white;
+
             font-size: 1.3rem;
+
             display: inline-block;
+
             margin-bottom: 12px;
+
         }
+
+
 
         .footer-brand .nav-brand .brand-brace {
+
             color: var(--accent-light);
+
         }
+
+
 
         .footer-brand p {
+
             font-size: 0.9rem;
+
             line-height: 1.7;
+
         }
+
+
 
         .footer-col h4 {
+
             color: white;
+
             font-size: 0.8rem;
+
             text-transform: uppercase;
+
             letter-spacing: 0.1em;
+
             margin-bottom: 16px;
+
             font-weight: 600;
+
         }
 
+
+
         .footer-col a {
+
             display: block;
+
             color: rgba(255,255,255,0.5);
+
             text-decoration: none;
+
             font-size: 0.9rem;
+
             padding: 5px 0;
+
             transition: color 0.2s;
+
         }
+
+
 
         .footer-col a:hover { color: white; }
 
+
+
         .footer-bottom {
+
             border-top: 1px solid rgba(255,255,255,0.08);
+
             padding-top: 24px;
+
             font-size: 0.82rem;
+
         }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* SCROLL REVEAL                                   */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         .reveal {
+
             opacity: 0;
+
             transform: translateY(24px);
+
             transition: opacity 0.7s ease, transform 0.7s ease;
+
         }
+
+
 
         .reveal.visible {
+
             opacity: 1;
+
             transform: translateY(0);
+
         }
+
+
 
         .reveal-delay-1 { transition-delay: 0.1s; }
+
         .reveal-delay-2 { transition-delay: 0.2s; }
+
         .reveal-delay-3 { transition-delay: 0.3s; }
+
         .reveal-delay-4 { transition-delay: 0.4s; }
+
         .reveal-delay-5 { transition-delay: 0.5s; }
 
+
+
         /* ═══════════════════════════════════════════════ */
+
         /* RESPONSIVE                                      */
+
         /* ═══════════════════════════════════════════════ */
+
+
 
         @media (max-width: 1024px) {
+
             .hero-title { font-size: 3rem; }
+
             .section-title { font-size: 2.1rem; }
+
             .about-grid { gap: 48px; }
+
             .capability-grid { grid-template-columns: repeat(2, 1fr); }
+
         }
 
+
+
         @media (max-width: 768px) {
+
             .nav-links { display: none; }
+
             .nav-mobile { display: flex; }
+
             .mobile-menu { display: block; }
+
             .mobile-overlay { display: block; }
 
+
+
             .hero { min-height: auto; padding: 120px 0 60px; }
+
             .hero-title { font-size: 2.4rem; }
+
             .hero-subtitle { font-size: 1.05rem; }
+
             .hero::after { font-size: 10rem; right: 2%; bottom: 4%; }
+
+
 
             section { padding: 64px 0; }
 
+
+
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
+
             .dashboard-mock { order: -1; }
+
+
 
             .capability-grid { grid-template-columns: 1fr; }
 
+
+
             .products-grid { gap: 20px; }
+
             .product-item { min-width: 100px; }
 
+
+
             .world-grid { grid-template-columns: 1fr; }
+
             .world-card { padding: 32px; }
 
+
+
             .steps {
+
                 grid-template-columns: 1fr;
+
                 gap: 32px;
+
                 max-width: 400px;
+
             }
+
             .steps::before { display: none; }
 
+
+
             .mobile-teaser-inner { flex-direction: column; }
+
             .mobile-phone { width: 120px; height: 220px; border-radius: 20px; padding: 8px; }
+
             .mobile-phone-screen { border-radius: 14px; }
+
             .mobile-teaser-text h2 { font-size: 1.6rem; }
+
             .app-badges { flex-direction: column; align-items: center; }
 
+
+
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
         }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <!-- Navigation -->
+
     <nav class="nav">
+
         <div class="nav-inner">
+
             <a href="#" class="nav-brand"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span> Wealth</a>
+
             <div class="nav-links">
+
                 <a href="#platform">Platform</a>
+
                 <a href="#capabilities">Capabilities</a>
+
                 <a href="#your-world">Your World</a>
+
                 <a href="#mobile">Mobile</a>
+
                 <a href="#contact" class="nav-cta">Get in Touch</a>
+
             </div>
+
             <button class="nav-mobile" aria-label="Menu" onclick="toggleMenu()">
+
                 <span></span><span></span><span></span>
+
             </button>
+
         </div>
+
     </nav>
 
+
+
     <!-- Mobile Menu -->
+
     <div class="mobile-overlay" onclick="toggleMenu()"></div>
+
     <div class="mobile-menu">
+
         <a href="#platform" onclick="toggleMenu()">Platform</a>
+
         <a href="#capabilities" onclick="toggleMenu()">Capabilities</a>
+
         <a href="#your-world" onclick="toggleMenu()">Your World</a>
+
         <a href="#mobile" onclick="toggleMenu()">Mobile</a>
+
         <a href="#contact" onclick="toggleMenu()">Get in Touch</a>
+
     </div>
 
+
+
     <!-- Hero -->
+
     <section class="hero">
+
         <div class="container">
+
             <div class="hero-content">
+
                 <span class="hero-label">Intelligent Wealth Management</span>
+
                 <h1 class="hero-title">Your wealth.<br>Understood.</h1>
+
                 <p class="hero-subtitle">The intelligent platform that brings together everything you own, everything you owe, and everything you need to know. One place. Complete clarity.</p>
+
                 <div class="hero-cta">
+
                     <a href="#platform" class="btn-primary">Explore the Platform <i class="fas fa-arrow-right" style="font-size:0.85rem"></i></a>
+
                     <a href="#your-world" class="btn-secondary">See How It Works</a>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- What is {Charlie}? -->
+
     <section id="platform" class="about-platform">
+
         <div class="container">
+
             <div class="about-grid">
+
                 <div class="about-text reveal">
+
                     <span class="section-label">The Platform</span>
+
                     <h2 class="section-title">A single view of wealth,<br>intelligently connected.</h2>
+
                     <p class="section-subtitle">
+
                         <span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth brings together investments, property, banking, pensions, and personal assets into one place. Charlie, your intelligent assistant, sits alongside everything you do &mdash; understanding context, answering questions, and taking action.
+
                     </p>
+
                     <ul class="about-points">
+
                         <li><i class="fas fa-check"></i> Aggregated view across all your asset classes</li>
+
                         <li><i class="fas fa-check"></i> Intelligent assistant that understands your wealth</li>
+
                         <li><i class="fas fa-check"></i> Document intelligence with automatic classification</li>
+
                         <li><i class="fas fa-check"></i> Connect your accountant, solicitor, or adviser securely</li>
+
                     </ul>
+
                 </div>
+
                 <div class="reveal reveal-delay-2">
+
                     <div class="dashboard-mock">
+
                         <div class="mock-topbar">
+
                             <span class="mock-topbar-brand"><span class="brand-brace">{</span>C<span class="brand-brace">}</span> Wealth</span>
+
                             <div class="mock-dots"><span></span><span></span><span></span></div>
+
                         </div>
+
                         <div class="mock-body">
+
                             <div class="mock-nav">
+
                                 <div class="mock-nav-item active"></div>
+
                                 <div class="mock-nav-item"></div>
+
                                 <div class="mock-nav-item"></div>
+
                                 <div class="mock-nav-item"></div>
+
                                 <div class="mock-nav-item"></div>
+
                                 <div class="mock-nav-item"></div>
+
                             </div>
+
                             <div class="mock-content">
+
                                 <div class="mock-chart">
+
                                     <div class="mock-bar"></div>
+
                                     <div class="mock-bar"></div>
+
                                     <div class="mock-bar"></div>
+
                                     <div class="mock-bar"></div>
+
                                     <div class="mock-bar"></div>
+
                                     <div class="mock-bar"></div>
+
                                     <div class="mock-bar"></div>
+
                                     <div class="mock-bar"></div>
+
                                 </div>
+
                                 <div class="mock-lines">
+
                                     <div class="mock-line"></div>
+
                                     <div class="mock-line"></div>
+
                                     <div class="mock-line"></div>
+
                                 </div>
+
                             </div>
+
                             <div class="mock-charlie">
+
                                 <div class="mock-charlie-header">Charlie</div>
+
                                 <div class="mock-charlie-bubble"></div>
+
                                 <div class="mock-charlie-bubble"></div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- Capabilities -->
+
     <section id="capabilities" class="capabilities">
+
         <div class="container">
+
             <div class="section-header reveal">
+
                 <span class="section-label">Capabilities</span>
+
                 <h2 class="section-title">Wealth management, reimagined.</h2>
+
                 <p class="section-subtitle">Intelligence built into every layer. Your wealth works harder when everything is connected.</p>
+
             </div>
+
             <div class="capability-grid">
+
                 <div class="capability-card reveal reveal-delay-1">
+
                     <div class="capability-icon"><i class="fas fa-brain"></i></div>
+
                     <h3>Intelligent Assistant</h3>
+
                     <p>Charlie understands context. Ask about your portfolio, get instant answers, or let it handle the paperwork. Natural language, by text or voice.</p>
+
                 </div>
+
                 <div class="capability-card reveal reveal-delay-2">
+
                     <div class="capability-icon"><i class="fas fa-file-alt"></i></div>
+
                     <h3>Document Intelligence</h3>
+
                     <p>Drop in a document. Charlie reads it, classifies it, extracts key facts, and links it to the right asset automatically.</p>
+
                 </div>
+
                 <div class="capability-card reveal reveal-delay-3">
+
                     <div class="capability-icon"><i class="fas fa-chart-pie"></i></div>
+
                     <h3>Aggregated Wealth</h3>
+
                     <p>Investments, property, banking, pensions, chattels &mdash; everything in one place. The complete picture, always current.</p>
+
                 </div>
+
                 <div class="capability-card reveal reveal-delay-1">
+
                     <div class="capability-icon"><i class="fas fa-users"></i></div>
+
                     <h3>Connected Professionals</h3>
+
                     <p>Invite the people who help manage your life. Accountant, solicitor, financial adviser, family members &mdash; give them the view they need, securely.</p>
+
                 </div>
+
                 <div class="capability-card reveal reveal-delay-2">
+
                     <div class="capability-icon"><i class="fas fa-university"></i></div>
+
                     <h3>Connected Banking</h3>
+
                     <p>Link your bank accounts for a live view of your cash position. See spending, track income, and understand your complete financial picture.</p>
+
                 </div>
+
                 <div class="capability-card reveal reveal-delay-3">
+
                     <div class="capability-icon"><i class="fas fa-microphone"></i></div>
+
                     <h3>Voice First</h3>
+
                     <p>Talk to Charlie like you would a trusted colleague. Natural conversation, immediate understanding. Your wealth at the speed of thought.</p>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- Products Strip -->
+
     <section class="products">
+
         <div class="container">
+
             <div class="section-header reveal">
+
                 <span class="section-label">Your Wealth, Expressed</span>
+
                 <h2 class="section-title">Your whole world. One view.</h2>
+
             </div>
+
             <div class="products-grid reveal">
+
                 <div class="product-item">
+
                     <span class="product-mark"><span class="brand-brace">{</span>Portfolio<span class="brand-brace">}</span></span>
+
                     <span class="product-desc">Your investments</span>
+
                 </div>
+
                 <div class="product-item">
+
                     <span class="product-mark"><span class="brand-brace">{</span>Property<span class="brand-brace">}</span></span>
+
                     <span class="product-desc">Real estate</span>
+
                 </div>
+
                 <div class="product-item">
+
                     <span class="product-mark"><span class="brand-brace">{</span>Chattel<span class="brand-brace">}</span></span>
+
                     <span class="product-desc">Valuable possessions</span>
+
                 </div>
+
                 <div class="product-item">
+
                     <span class="product-mark"><span class="brand-brace">{</span>Banking<span class="brand-brace">}</span></span>
+
                     <span class="product-desc">Accounts &amp; cash</span>
+
                 </div>
+
                 <div class="product-item">
+
                     <span class="product-mark"><span class="brand-brace">{</span>DocVault<span class="brand-brace">}</span></span>
+
                     <span class="product-desc">Your documents</span>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- Your World -->
+
     <section id="your-world" class="your-world">
+
         <div class="container">
+
             <div class="section-header reveal">
+
                 <span class="section-label">Your World</span>
+
                 <h2 class="section-title">Your wealth. Your control.</h2>
+
                 <p class="section-subtitle">Everything starts with you. See your complete financial picture, and connect the people who matter.</p>
+
             </div>
+
             <div class="world-grid">
+
                 <div class="world-card reveal reveal-delay-1">
+
                     <div class="card-icon"><i class="fas fa-gem"></i></div>
+
                     <h3>Your Dashboard</h3>
+
                     <ul>
+
                         <li><i class="fas fa-circle"></i> See everything you own in one beautiful, clear view</li>
+
                         <li><i class="fas fa-circle"></i> Upload documents &mdash; Charlie files them for you</li>
+
                         <li><i class="fas fa-circle"></i> Track property, chattels, and investments together</li>
+
                         <li><i class="fas fa-circle"></i> Instant answers about your wealth from Charlie</li>
+
                         <li><i class="fas fa-circle"></i> A premium experience worthy of your life's work</li>
+
                     </ul>
+
                 </div>
+
                 <div class="world-card reveal reveal-delay-2">
+
                     <div class="card-icon"><i class="fas fa-users"></i></div>
-                    <h3>Your People</h3>
+
+                    <h3>Share Your World</h3>
+
                     <ul>
-                        <li><i class="fas fa-circle"></i> Connect family members to share your financial picture</li>
-                        <li><i class="fas fa-circle"></i> Give your accountant or solicitor the view they need</li>
-                        <li><i class="fas fa-circle"></i> Invite your financial adviser when you need guidance</li>
-                        <li><i class="fas fa-circle"></i> Secure sharing &mdash; you control who sees what</li>
-                        <li><i class="fas fa-circle"></i> Everyone connected, no paperwork, no back-and-forth</li>
+
+                        <li><i class="fas fa-circle"></i> Bring family members in to see the full picture</li>
+
+                        <li><i class="fas fa-circle"></i> Give your accountant or solicitor the access they need</li>
+
+                        <li><i class="fas fa-circle"></i> Connect an investment platform through your adviser</li>
+
+                        <li><i class="fas fa-circle"></i> Invite professionals when you need guidance</li>
+
+                        <li><i class="fas fa-circle"></i> You decide who sees what &mdash; always</li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- How It Works -->
+
     <section class="how-it-works">
+
         <div class="container">
+
             <div class="section-header reveal">
+
                 <span class="section-label">Getting Started</span>
+
                 <h2 class="section-title">Three steps to clarity.</h2>
+
             </div>
+
             <div class="steps">
+
                 <div class="step reveal reveal-delay-1">
+
                     <div class="step-number">1</div>
+
                     <h3>Connect</h3>
+
                     <p>Your wealth data flows in. Investments, property, banking, pensions &mdash; all aggregated automatically.</p>
+
                 </div>
+
                 <div class="step reveal reveal-delay-2">
+
                     <div class="step-number">2</div>
+
                     <h3>Understand</h3>
+
                     <p>Charlie connects the dots. Ask questions, get answers. Your complete financial picture, always clear.</p>
+
                 </div>
+
                 <div class="step reveal reveal-delay-3">
+
                     <div class="step-number">3</div>
+
                     <h3>Act</h3>
+
                     <p>Take control. Upload documents, track assets, link your adviser. Everything in one place, at your pace.</p>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- Mobile App Teaser -->
+
     <section id="mobile" class="mobile-teaser">
+
         <div class="container">
+
             <div class="mobile-teaser-inner reveal">
+
                 <div class="mobile-phone">
+
                     <div class="mobile-phone-screen">
+
                         <div class="mobile-phone-brand"><span class="brand-brace">{</span>C<span class="brand-brace">}</span></div>
+
                         <div class="mobile-phone-bar accent"></div>
+
                         <div class="mobile-phone-bar"></div>
+
                         <div class="mobile-phone-bar"></div>
+
                         <div class="mobile-phone-bar accent"></div>
+
                         <div class="mobile-phone-bar"></div>
+
                         <div class="mobile-phone-card">
+
                             <div class="mobile-phone-card-bar"></div>
+
                             <div class="mobile-phone-card-bar"></div>
+
                             <div class="mobile-phone-card-bar"></div>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="mobile-teaser-text">
+
                     <span class="section-label">Always With You</span>
+
                     <h2>Your wealth in your pocket.</h2>
+
                     <p><span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth lives on your phone too. Check your portfolio on the train, photograph a receipt, or ask Charlie a question &mdash; wherever you are.</p>
+
                     <div class="app-badges">
+
                         <a href="#" class="app-badge"><i class="fab fa-apple"></i> App Store</a>
+
                         <a href="#" class="app-badge"><i class="fab fa-google-play"></i> Google Play</a>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- CTA -->
+
     <section id="contact" class="cta-section">
+
         <div class="container reveal">
+
             <h2 class="section-title">Ready to see your wealth<br>differently?</h2>
+
             <p class="section-subtitle">Get in touch to learn how <span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth can bring clarity to your financial world.</p>
+
             <a href="mailto:hello@charliewealth.com" class="btn-primary" style="font-size:1rem;padding:16px 36px;">Start a Conversation <i class="fas fa-arrow-right" style="font-size:0.85rem"></i></a>
+
         </div>
+
     </section>
 
+
+
     <!-- Footer -->
+
     <footer class="footer">
+
         <div class="container">
+
             <div class="footer-grid">
+
                 <div class="footer-brand">
+
                     <span class="nav-brand"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span> Wealth</span>
+
                     <p>Intelligent wealth management for people who want to see everything in one place. Built in the UK, for the UK.</p>
+
                 </div>
+
                 <div class="footer-col">
+
                     <h4>Platform</h4>
+
                     <a href="#platform">Overview</a>
+
                     <a href="#capabilities">Capabilities</a>
+
                     <a href="#your-world">Your World</a>
+
                     <a href="#mobile">Mobile App</a>
+
                 </div>
+
                 <div class="footer-col">
+
                     <h4>Company</h4>
+
                     <a href="#">About</a>
+
                     <a href="mailto:hello@charliewealth.com">Contact</a>
+
                     <a href="#">Privacy Policy</a>
+
                     <a href="#">Terms of Service</a>
+
                 </div>
+
             </div>
+
             <div class="footer-bottom">
+
                 <p>&copy; 2025 Charlie Wealth Ltd. All rights reserved.</p>
+
             </div>
+
         </div>
+
     </footer>
 
+
+
     <script>
+
         // Nav scroll behaviour
+
         window.addEventListener('scroll', () => {
+
             document.querySelector('.nav').classList.toggle('nav-scrolled', window.scrollY > 80);
+
         });
 
+
+
         // Scroll reveal
+
         const observer = new IntersectionObserver((entries) => {
+
             entries.forEach(entry => {
+
                 if (entry.isIntersecting) {
+
                     entry.target.classList.add('visible');
+
                     observer.unobserve(entry.target);
+
                 }
+
             });
+
         }, { threshold: 0.12 });
+
+
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+
+
         // Smooth scroll
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
             anchor.addEventListener('click', function(e) {
+
                 e.preventDefault();
+
                 const target = document.querySelector(this.getAttribute('href'));
+
                 if (target) {
+
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
                 }
+
             });
+
         });
 
+
+
         // Mobile menu
+
         function toggleMenu() {
+
             document.querySelector('.mobile-menu').classList.toggle('open');
+
             document.querySelector('.mobile-overlay').classList.toggle('open');
+
         }
+
     </script>
 
+
+
 </body>
+
 </html>
