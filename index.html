@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{Charlie} Wealth | AI-First Wealth Management Platform</title>
-    <meta name="description" content="The intelligent wealth platform that thinks, acts, and remembers. AI-first wealth management for financial advisers and their high net worth clients.">
-    <meta property="og:title" content="{Charlie} Wealth | AI-First Wealth Management Platform">
-    <meta property="og:description" content="Your wealth. Understood. AI-first wealth management that thinks, acts, and remembers.">
+    <title>{Charlie} Wealth | Intelligent Wealth Management</title>
+    <meta name="description" content="Your wealth. Understood. The intelligent platform that brings together everything you own, everything you owe, and everything you need to know.">
+    <meta property="og:title" content="{Charlie} Wealth | Intelligent Wealth Management">
+    <meta property="og:description" content="Your wealth. Understood. See everything you own in one place. Intelligent by design.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://charliewealth.com">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80' fill='%236366f1'%3E%7BC%7D%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23faf8f5'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='serif' font-size='68' font-weight='700'%3E%3Ctspan fill='%23da7756'%3E%7B%3C/tspan%3E%3Ctspan fill='%232d2a26'%3EC%3C/tspan%3E%3Ctspan fill='%23da7756'%3E%7D%3C/tspan%3E%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -21,10 +21,11 @@
             --bg-white: #ffffff;
             --bg-warm: #f5f2ee;
             --bg-warm-alt: #f0ece6;
-            --accent: #6366f1;
-            --accent-light: #818cf8;
-            --accent-soft: rgba(99, 102, 241, 0.08);
-            --accent-glow: rgba(99, 102, 241, 0.15);
+            --accent: #da7756;
+            --accent-light: #e8956e;
+            --accent-soft: rgba(218, 119, 86, 0.08);
+            --accent-glow: rgba(218, 119, 86, 0.12);
+            --accent-hover: #c4684a;
             --text-primary: #2d2a26;
             --text-secondary: #5c574f;
             --text-tertiary: #8a847a;
@@ -129,9 +130,9 @@
         }
 
         .nav-cta:hover {
-            background: #4f46e5;
+            background: var(--accent-hover);
             transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 4px 16px rgba(218, 119, 86, 0.25);
         }
 
         .nav-mobile {
@@ -224,7 +225,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 18rem;
             font-weight: 400;
-            color: rgba(99, 102, 241, 0.04);
+            color: rgba(218, 119, 86, 0.04);
             line-height: 1;
             pointer-events: none;
             animation: gentleFloat 12s ease-in-out infinite;
@@ -297,9 +298,9 @@
         }
 
         .btn-primary:hover {
-            background: #4f46e5;
+            background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 6px 20px rgba(218, 119, 86, 0.25);
         }
 
         .btn-secondary {
@@ -617,18 +618,18 @@
         }
 
         /* ═══════════════════════════════════════════════ */
-        /* FOR ADVISERS / CLIENTS                          */
+        /* YOUR WORLD SECTION (was advisers/clients)       */
         /* ═══════════════════════════════════════════════ */
 
-        .audience { background: var(--bg-cream); }
+        .your-world { background: var(--bg-cream); }
 
-        .audience-grid {
+        .world-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
         }
 
-        .audience-card {
+        .world-card {
             background: var(--bg-white);
             border-radius: 20px;
             padding: 48px;
@@ -639,7 +640,7 @@
             overflow: hidden;
         }
 
-        .audience-card::before {
+        .world-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -650,16 +651,16 @@
             border-radius: 0 4px 4px 0;
         }
 
-        .audience-card:nth-child(2)::before {
+        .world-card:nth-child(2)::before {
             background: var(--sage);
         }
 
-        .audience-card:hover {
+        .world-card:hover {
             transform: translateY(-2px);
             box-shadow: var(--card-shadow-hover);
         }
 
-        .audience-card .card-icon {
+        .world-card .card-icon {
             width: 56px;
             height: 56px;
             background: var(--accent-soft);
@@ -672,24 +673,24 @@
             margin-bottom: 24px;
         }
 
-        .audience-card:nth-child(2) .card-icon {
+        .world-card:nth-child(2) .card-icon {
             background: rgba(124, 154, 126, 0.1);
             color: var(--sage);
         }
 
-        .audience-card h3 {
+        .world-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 16px;
         }
 
-        .audience-card ul {
+        .world-card ul {
             list-style: none;
             padding: 0;
         }
 
-        .audience-card li {
+        .world-card li {
             padding: 8px 0;
             color: var(--text-secondary);
             font-size: 0.93rem;
@@ -698,13 +699,13 @@
             gap: 10px;
         }
 
-        .audience-card li i {
+        .world-card li i {
             margin-top: 5px;
             font-size: 0.7rem;
         }
 
-        .audience-card:first-child li i { color: var(--accent); }
-        .audience-card:last-child li i { color: var(--sage); }
+        .world-card:first-child li i { color: var(--accent); }
+        .world-card:last-child li i { color: var(--sage); }
 
         /* ═══════════════════════════════════════════════ */
         /* HOW IT WORKS                                    */
@@ -762,6 +763,121 @@
             font-size: 0.9rem;
             line-height: 1.7;
         }
+
+        /* ═══════════════════════════════════════════════ */
+        /* MOBILE APP TEASER                               */
+        /* ═══════════════════════════════════════════════ */
+
+        .mobile-teaser {
+            background: var(--bg-cream);
+            padding: 80px 0;
+        }
+
+        .mobile-teaser-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            text-align: center;
+        }
+
+        .mobile-phone {
+            width: 160px;
+            height: 300px;
+            background: var(--text-primary);
+            border-radius: 28px;
+            padding: 12px;
+            box-shadow: var(--card-shadow-hover);
+            flex-shrink: 0;
+        }
+
+        .mobile-phone-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-cream);
+            border-radius: 18px;
+            padding: 16px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-phone-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .mobile-phone-bar {
+            height: 6px;
+            background: var(--bg-warm-alt);
+            border-radius: 3px;
+        }
+
+        .mobile-phone-bar.accent { background: var(--accent-soft); }
+        .mobile-phone-bar:nth-child(3) { width: 70%; }
+        .mobile-phone-bar:nth-child(5) { width: 85%; }
+
+        .mobile-phone-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: auto;
+        }
+
+        .mobile-phone-card-bar {
+            height: 4px;
+            background: var(--bg-warm-alt);
+            border-radius: 2px;
+            margin-bottom: 4px;
+        }
+
+        .mobile-phone-card-bar:last-child { width: 60%; margin-bottom: 0; }
+
+        .mobile-teaser-text { max-width: 440px; }
+
+        .mobile-teaser-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .mobile-teaser-text p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .app-badges {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            justify-content: center;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--text-primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .app-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .app-badge i { font-size: 1.2rem; }
 
         /* ═══════════════════════════════════════════════ */
         /* CTA SECTION                                     */
@@ -892,8 +1008,8 @@
             .products-grid { gap: 20px; }
             .product-item { min-width: 100px; }
 
-            .audience-grid { grid-template-columns: 1fr; }
-            .audience-card { padding: 32px; }
+            .world-grid { grid-template-columns: 1fr; }
+            .world-card { padding: 32px; }
 
             .steps {
                 grid-template-columns: 1fr;
@@ -901,6 +1017,12 @@
                 max-width: 400px;
             }
             .steps::before { display: none; }
+
+            .mobile-teaser-inner { flex-direction: column; }
+            .mobile-phone { width: 120px; height: 220px; border-radius: 20px; padding: 8px; }
+            .mobile-phone-screen { border-radius: 14px; }
+            .mobile-teaser-text h2 { font-size: 1.6rem; }
+            .app-badges { flex-direction: column; align-items: center; }
 
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
         }
@@ -915,8 +1037,8 @@
             <div class="nav-links">
                 <a href="#platform">Platform</a>
                 <a href="#capabilities">Capabilities</a>
-                <a href="#advisers">For Advisers</a>
-                <a href="#clients">For Clients</a>
+                <a href="#your-world">Your World</a>
+                <a href="#mobile">Mobile</a>
                 <a href="#contact" class="nav-cta">Get in Touch</a>
             </div>
             <button class="nav-mobile" aria-label="Menu" onclick="toggleMenu()">
@@ -930,8 +1052,8 @@
     <div class="mobile-menu">
         <a href="#platform" onclick="toggleMenu()">Platform</a>
         <a href="#capabilities" onclick="toggleMenu()">Capabilities</a>
-        <a href="#advisers" onclick="toggleMenu()">For Advisers</a>
-        <a href="#clients" onclick="toggleMenu()">For Clients</a>
+        <a href="#your-world" onclick="toggleMenu()">Your World</a>
+        <a href="#mobile" onclick="toggleMenu()">Mobile</a>
         <a href="#contact" onclick="toggleMenu()">Get in Touch</a>
     </div>
 
@@ -939,12 +1061,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-label">AI-First Wealth Management</span>
+                <span class="hero-label">Intelligent Wealth Management</span>
                 <h1 class="hero-title">Your wealth.<br>Understood.</h1>
-                <p class="hero-subtitle">The intelligent platform that brings together everything you own, everything you owe, and everything you need to know. Powered by Charlotte, your AI wealth assistant.</p>
+                <p class="hero-subtitle">The intelligent platform that brings together everything you own, everything you owe, and everything you need to know. One place. Complete clarity.</p>
                 <div class="hero-cta">
                     <a href="#platform" class="btn-primary">Explore the Platform <i class="fas fa-arrow-right" style="font-size:0.85rem"></i></a>
-                    <a href="#about-charlotte" class="btn-secondary">Meet Charlotte</a>
+                    <a href="#your-world" class="btn-secondary">See How It Works</a>
                 </div>
             </div>
         </div>
@@ -956,15 +1078,15 @@
             <div class="about-grid">
                 <div class="about-text reveal">
                     <span class="section-label">The Platform</span>
-                    <h2 class="section-title">A single view of wealth,<br>powered by AI.</h2>
+                    <h2 class="section-title">A single view of wealth,<br>intelligently connected.</h2>
                     <p class="section-subtitle">
-                        <span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth brings together investments, property, banking, pensions, and personal assets into one place. Charlotte, your AI assistant, sits alongside everything you do &mdash; understanding context, answering questions, and taking action.
+                        <span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth brings together investments, property, banking, pensions, and personal assets into one place. Charlie, your intelligent assistant, sits alongside everything you do &mdash; understanding context, answering questions, and taking action.
                     </p>
                     <ul class="about-points">
-                        <li><i class="fas fa-check"></i> Aggregated view across all asset classes</li>
-                        <li><i class="fas fa-check"></i> Conversational AI that understands your clients</li>
+                        <li><i class="fas fa-check"></i> Aggregated view across all your asset classes</li>
+                        <li><i class="fas fa-check"></i> Intelligent assistant that understands your wealth</li>
                         <li><i class="fas fa-check"></i> Document intelligence with automatic classification</li>
-                        <li><i class="fas fa-check"></i> Built for UK advisers and their HNW clients</li>
+                        <li><i class="fas fa-check"></i> Link your financial adviser when you need professional guidance</li>
                     </ul>
                 </div>
                 <div class="reveal reveal-delay-2">
@@ -1000,7 +1122,7 @@
                                 </div>
                             </div>
                             <div class="mock-charlie">
-                                <div class="mock-charlie-header">Charlotte</div>
+                                <div class="mock-charlie-header">Charlie</div>
                                 <div class="mock-charlie-bubble"></div>
                                 <div class="mock-charlie-bubble"></div>
                             </div>
@@ -1017,18 +1139,18 @@
             <div class="section-header reveal">
                 <span class="section-label">Capabilities</span>
                 <h2 class="section-title">Wealth management, reimagined.</h2>
-                <p class="section-subtitle">Six core capabilities that transform how advisers work and how clients experience their wealth.</p>
+                <p class="section-subtitle">Intelligence built into every layer. Your wealth works harder when everything is connected.</p>
             </div>
             <div class="capability-grid">
                 <div class="capability-card reveal reveal-delay-1">
                     <div class="capability-icon"><i class="fas fa-brain"></i></div>
-                    <h3>Conversational AI</h3>
-                    <p>Charlotte understands context. Ask about a client, dictate a letter, query a portfolio &mdash; in natural language, by text or voice.</p>
+                    <h3>Intelligent Assistant</h3>
+                    <p>Charlie understands context. Ask about your portfolio, get instant answers, or let it handle the paperwork. Natural language, by text or voice.</p>
                 </div>
                 <div class="capability-card reveal reveal-delay-2">
                     <div class="capability-icon"><i class="fas fa-file-alt"></i></div>
                     <h3>Document Intelligence</h3>
-                    <p>Drop in a document. Charlotte reads it, classifies it, extracts key facts, and links it to the right client or asset automatically.</p>
+                    <p>Drop in a document. Charlie reads it, classifies it, extracts key facts, and links it to the right asset automatically.</p>
                 </div>
                 <div class="capability-card reveal reveal-delay-3">
                     <div class="capability-icon"><i class="fas fa-chart-pie"></i></div>
@@ -1036,19 +1158,19 @@
                     <p>Investments, property, banking, pensions, chattels &mdash; everything in one place. The complete picture, always current.</p>
                 </div>
                 <div class="capability-card reveal reveal-delay-1">
-                    <div class="capability-icon"><i class="fas fa-comments"></i></div>
-                    <h3>Communications Hub</h3>
-                    <p>Every call, message, email, and meeting note captured and indexed. Full audit trail. Compliance-ready from day one.</p>
+                    <div class="capability-icon"><i class="fas fa-link"></i></div>
+                    <h3>Link Your Adviser</h3>
+                    <p>Need professional guidance? Invite your financial adviser into your world. They see what you see. Pension transfers, tax planning, complex cases &mdash; covered.</p>
                 </div>
                 <div class="capability-card reveal reveal-delay-2">
-                    <div class="capability-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Compliance Built In</h3>
-                    <p>Suitability letters written in minutes, not days. Every interaction recorded. Charlotte knows what regulators expect.</p>
+                    <div class="capability-icon"><i class="fas fa-university"></i></div>
+                    <h3>Connected Banking</h3>
+                    <p>Link your bank accounts for a live view of your cash position. See spending, track income, and understand your complete financial picture.</p>
                 </div>
                 <div class="capability-card reveal reveal-delay-3">
                     <div class="capability-icon"><i class="fas fa-microphone"></i></div>
                     <h3>Voice First</h3>
-                    <p>Talk to Charlotte like a colleague. Wake word activation, natural conversation, immediate action. Hands-free wealth management.</p>
+                    <p>Talk to Charlie like you would a trusted colleague. Natural conversation, immediate understanding. Your wealth at the speed of thought.</p>
                 </div>
             </div>
         </div>
@@ -1058,21 +1180,13 @@
     <section class="products">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Product Suite</span>
-                <h2 class="section-title">Your wealth, expressed.</h2>
+                <span class="section-label">Your Wealth, Expressed</span>
+                <h2 class="section-title">Everything in <span class="brand-brace">{</span>code<span class="brand-brace">}</span>.</h2>
             </div>
             <div class="products-grid reveal">
                 <div class="product-item">
-                    <span class="product-mark"><span class="brand-brace">{</span>SIPP<span class="brand-brace">}</span></span>
-                    <span class="product-desc">Pensions</span>
-                </div>
-                <div class="product-item">
-                    <span class="product-mark"><span class="brand-brace">{</span>GIA<span class="brand-brace">}</span></span>
-                    <span class="product-desc">Investments</span>
-                </div>
-                <div class="product-item">
-                    <span class="product-mark"><span class="brand-brace">{</span>ISA<span class="brand-brace">}</span></span>
-                    <span class="product-desc">Tax-efficient savings</span>
+                    <span class="product-mark"><span class="brand-brace">{</span>Portfolio<span class="brand-brace">}</span></span>
+                    <span class="product-desc">ISA, GIA, SIPP, Pension, Onshore Bonds, Offshore Bonds, Beneficiary</span>
                 </div>
                 <div class="product-item">
                     <span class="product-mark"><span class="brand-brace">{</span>Property<span class="brand-brace">}</span></span>
@@ -1083,6 +1197,10 @@
                     <span class="product-desc">Valuable possessions</span>
                 </div>
                 <div class="product-item">
+                    <span class="product-mark"><span class="brand-brace">{</span>Banking<span class="brand-brace">}</span></span>
+                    <span class="product-desc">Accounts &amp; cash</span>
+                </div>
+                <div class="product-item">
                     <span class="product-mark"><span class="brand-brace">{</span>DocVault<span class="brand-brace">}</span></span>
                     <span class="product-desc">Intelligent documents</span>
                 </div>
@@ -1090,34 +1208,35 @@
         </div>
     </section>
 
-    <!-- For Advisers / For Clients -->
-    <section id="advisers" class="audience">
+    <!-- Your World -->
+    <section id="your-world" class="your-world">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Built for Everyone</span>
-                <h2 class="section-title">Two experiences. One platform.</h2>
+                <span class="section-label">Your World</span>
+                <h2 class="section-title">Your wealth. Your control.</h2>
+                <p class="section-subtitle">Everything starts with you. See your complete financial picture, and bring in professional help when you need it.</p>
             </div>
-            <div class="audience-grid">
-                <div class="audience-card reveal reveal-delay-1">
-                    <div class="card-icon"><i class="fas fa-user-tie"></i></div>
-                    <h3>For Advisers</h3>
-                    <ul>
-                        <li><i class="fas fa-circle"></i> Charlotte writes your suitability letters from conversation data</li>
-                        <li><i class="fas fa-circle"></i> Every client interaction captured, indexed, and searchable</li>
-                        <li><i class="fas fa-circle"></i> Compliance audit trail built into every workflow</li>
-                        <li><i class="fas fa-circle"></i> Voice-first &mdash; talk to Charlotte, don't type</li>
-                        <li><i class="fas fa-circle"></i> Straight-through processing for account opening</li>
-                    </ul>
-                </div>
-                <div id="clients" class="audience-card reveal reveal-delay-2">
+            <div class="world-grid">
+                <div class="world-card reveal reveal-delay-1">
                     <div class="card-icon"><i class="fas fa-gem"></i></div>
-                    <h3>For Clients</h3>
+                    <h3>Your Dashboard</h3>
                     <ul>
                         <li><i class="fas fa-circle"></i> See everything you own in one beautiful, clear view</li>
-                        <li><i class="fas fa-circle"></i> Upload documents &mdash; Charlotte files them for you</li>
-                        <li><i class="fas fa-circle"></i> Message your adviser securely, anytime</li>
+                        <li><i class="fas fa-circle"></i> Upload documents &mdash; Charlie files them for you</li>
                         <li><i class="fas fa-circle"></i> Track property, chattels, and investments together</li>
+                        <li><i class="fas fa-circle"></i> Instant answers about your wealth from Charlie</li>
                         <li><i class="fas fa-circle"></i> A premium experience worthy of your life's work</li>
+                    </ul>
+                </div>
+                <div class="world-card reveal reveal-delay-2">
+                    <div class="card-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Link Your Adviser</h3>
+                    <ul>
+                        <li><i class="fas fa-circle"></i> Invite your financial adviser into your world</li>
+                        <li><i class="fas fa-circle"></i> They see what you see &mdash; no duplicate entry</li>
+                        <li><i class="fas fa-circle"></i> Pension transfers, offshore bonds, complex cases</li>
+                        <li><i class="fas fa-circle"></i> Secure messaging and document sharing built in</li>
+                        <li><i class="fas fa-circle"></i> Professional guidance when you need it, on your terms</li>
                     </ul>
                 </div>
             </div>
@@ -1129,7 +1248,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">Getting Started</span>
-                <h2 class="section-title">Three steps to smarter<br>wealth management.</h2>
+                <h2 class="section-title">Three steps to clarity.</h2>
             </div>
             <div class="steps">
                 <div class="step reveal reveal-delay-1">
@@ -1139,13 +1258,45 @@
                 </div>
                 <div class="step reveal reveal-delay-2">
                     <div class="step-number">2</div>
-                    <h3>Converse</h3>
-                    <p>Talk to Charlotte naturally. Ask questions, dictate notes, request actions. She understands context.</p>
+                    <h3>Understand</h3>
+                    <p>Charlie connects the dots. Ask questions, get answers. Your complete financial picture, always clear.</p>
                 </div>
                 <div class="step reveal reveal-delay-3">
                     <div class="step-number">3</div>
                     <h3>Act</h3>
-                    <p>Charlotte executes. Letters, reports, account opening &mdash; done in seconds, not days.</p>
+                    <p>Take control. Upload documents, track assets, link your adviser. Everything in one place, at your pace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Teaser -->
+    <section id="mobile" class="mobile-teaser">
+        <div class="container">
+            <div class="mobile-teaser-inner reveal">
+                <div class="mobile-phone">
+                    <div class="mobile-phone-screen">
+                        <div class="mobile-phone-brand"><span class="brand-brace">{</span>C<span class="brand-brace">}</span></div>
+                        <div class="mobile-phone-bar accent"></div>
+                        <div class="mobile-phone-bar"></div>
+                        <div class="mobile-phone-bar"></div>
+                        <div class="mobile-phone-bar accent"></div>
+                        <div class="mobile-phone-bar"></div>
+                        <div class="mobile-phone-card">
+                            <div class="mobile-phone-card-bar"></div>
+                            <div class="mobile-phone-card-bar"></div>
+                            <div class="mobile-phone-card-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-teaser-text">
+                    <span class="section-label">Always With You</span>
+                    <h2>Your wealth in your pocket.</h2>
+                    <p><span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth lives on your phone too. Check your portfolio on the train, photograph a receipt, or ask Charlie a question &mdash; wherever you are.</p>
+                    <div class="app-badges">
+                        <a href="#" class="app-badge"><i class="fab fa-apple"></i> App Store</a>
+                        <a href="#" class="app-badge"><i class="fab fa-google-play"></i> Google Play</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1155,7 +1306,7 @@
     <section id="contact" class="cta-section">
         <div class="container reveal">
             <h2 class="section-title">Ready to see your wealth<br>differently?</h2>
-            <p class="section-subtitle">Get in touch to learn how <span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth can transform your practice.</p>
+            <p class="section-subtitle">Get in touch to learn how <span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth can bring clarity to your financial world.</p>
             <a href="mailto:hello@charliewealth.com" class="btn-primary" style="font-size:1rem;padding:16px 36px;">Start a Conversation <i class="fas fa-arrow-right" style="font-size:0.85rem"></i></a>
         </div>
     </section>
@@ -1166,14 +1317,14 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <span class="nav-brand"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span> Wealth</span>
-                    <p>AI-first wealth management for financial advisers and their high net worth clients. Built in the UK, for the UK.</p>
+                    <p>Intelligent wealth management for people who want to see everything in one place. Built in the UK, for the UK.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Platform</h4>
                     <a href="#platform">Overview</a>
                     <a href="#capabilities">Capabilities</a>
-                    <a href="#advisers">For Advisers</a>
-                    <a href="#clients">For Clients</a>
+                    <a href="#your-world">Your World</a>
+                    <a href="#mobile">Mobile App</a>
                 </div>
                 <div class="footer-col">
                     <h4>Company</h4>
