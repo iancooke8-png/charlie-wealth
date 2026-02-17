@@ -3,234 +3,1227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlie Wealth - AI-Powered Wealth Management</title>
-    <meta name="description" content="Meet Charlotte, your AI wealth assistant. Transforming financial advice with intelligent, conversational technology.">
+    <title>{Charlie} Wealth | AI-First Wealth Management Platform</title>
+    <meta name="description" content="The intelligent wealth platform that thinks, acts, and remembers. AI-first wealth management for financial advisers and their high net worth clients.">
+    <meta property="og:title" content="{Charlie} Wealth | AI-First Wealth Management Platform">
+    <meta property="og:description" content="Your wealth. Understood. AI-first wealth management that thinks, acts, and remembers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://charliewealth.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80' fill='%236366f1'%3E%7BC%7D%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm: #f5f2ee;
+            --bg-warm-alt: #f0ece6;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-soft: rgba(99, 102, 241, 0.08);
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #2d2a26;
+            --text-secondary: #5c574f;
+            --text-tertiary: #8a847a;
+            --sage: #7c9a7e;
+            --stone: #c4b5a2;
+            --copper: #b87a56;
+            --card-shadow: 0 2px 20px rgba(45, 42, 38, 0.06);
+            --card-shadow-hover: 0 8px 32px rgba(45, 42, 38, 0.1);
+        }
+
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fafbfc; line-height: 1.6; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
         .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
-        .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.06); }
-        .nav-content { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #1a1a2e; }
-        .logo span { color: #6366f1; }
-        .nav-links { display: flex; align-items: center; gap: 32px; }
-        .nav-links a { text-decoration: none; color: #64748b; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-        .nav-links a:hover { color: #1a1a2e; }
+        /* ═══════════════════════════════════════════════ */
+        /* BRAND MARK                                      */
+        /* ═══════════════════════════════════════════════ */
 
-        .cta-button { display: inline-block; background: #6366f1; color: white !important; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
-        .cta-button:hover { background: #4f46e5; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,0.3); }
-        .cta-button.large { padding: 14px 32px; font-size: 1rem; }
-        .secondary-button { display: inline-block; color: #6366f1 !important; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid #e0e7ff; transition: all 0.2s; }
-        .secondary-button:hover { border-color: #6366f1; background: #f5f3ff; }
+        .brand-mark { font-family: 'Playfair Display', serif; font-weight: 700; }
+        .brand-brace { color: var(--accent); font-weight: 400; }
+        .product-mark { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; }
 
-        .hero { padding: 140px 0 80px; background: linear-gradient(135deg, #f5f3ff 0%, #eef2ff 50%, #fafbfc 100%); }
-        .hero-content { max-width: 680px; }
-        .hero-title { font-size: 3.2rem; font-weight: 700; line-height: 1.15; margin-bottom: 20px; color: #1a1a2e; }
-        .hero-subtitle { font-size: 1.2rem; color: #64748b; margin-bottom: 36px; line-height: 1.7; }
-        .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+        /* ═══════════════════════════════════════════════ */
+        /* NAVIGATION                                      */
+        /* ═══════════════════════════════════════════════ */
 
-        .section-title { font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 12px; }
-        .section-subtitle { font-size: 1.1rem; color: #64748b; text-align: center; max-width: 600px; margin: 0 auto 48px; }
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s ease;
+        }
 
-        .features { padding: 80px 0; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
-        .feature-card { background: white; padding: 32px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); transition: all 0.2s; }
-        .feature-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-        .feature-icon { font-size: 2rem; margin-bottom: 16px; }
-        .feature-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
-        .feature-card p { color: #64748b; font-size: 0.95rem; }
+        .nav-scrolled {
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            box-shadow: 0 1px 12px rgba(45, 42, 38, 0.06);
+        }
 
-        .how-it-works { padding: 80px 0; background: #f8fafc; }
-        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 900px; margin: 0 auto; }
-        .step { text-align: center; }
-        .step-number { width: 56px; height: 56px; background: #6366f1; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; margin: 0 auto 16px; }
-        .step h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
-        .step p { color: #64748b; font-size: 0.9rem; }
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-        .about { padding: 80px 0; }
-        .about-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: center; }
-        .about-text h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 20px; }
-        .about-text .lead { font-size: 1.1rem; color: #475569; margin-bottom: 16px; }
-        .about-text p { color: #64748b; margin-bottom: 12px; }
-        .ai-badge { background: linear-gradient(135deg, #6366f1, #8b5cf6); padding: 40px; border-radius: 20px; color: white; text-align: center; }
-        .badge-label { display: block; font-size: 0.85rem; opacity: 0.8; margin-bottom: 8px; }
-        .badge-model { display: block; font-size: 1.8rem; font-weight: 700; }
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
 
-        .cta-section { padding: 80px 0; background: linear-gradient(135deg, #1a1a2e, #2d2b55); color: white; }
-        .cta-content { text-align: center; max-width: 560px; margin: 0 auto; }
-        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
-        .cta-content p { color: rgba(255,255,255,0.7); margin-bottom: 32px; font-size: 1.05rem; }
+        .nav-brand .brand-brace { font-weight: 400; }
 
-        .footer { padding: 48px 0 24px; background: #1a1a2e; color: rgba(255,255,255,0.6); }
-        .footer-content { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px; }
-        .footer-brand .logo { color: white; margin-bottom: 8px; }
-        .footer-brand p { font-size: 0.9rem; }
-        .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .footer-column h4 { color: white; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
-        .footer-column a { display: block; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; transition: color 0.2s; }
-        .footer-column a:hover { color: white; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
-        .footer-bottom p { font-size: 0.85rem; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .nav-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-cta:hover {
+            background: #4f46e5;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+        }
+
+        .nav-mobile {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .nav-mobile span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-cream);
+            padding: 80px 32px 32px;
+            transition: right 0.3s ease;
+            box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+        .mobile-menu.open { right: 0; }
+
+        .mobile-menu a {
+            display: block;
+            padding: 16px 0;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            border-bottom: 1px solid var(--bg-warm-alt);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-overlay.open { opacity: 1; }
+
+        /* ═══════════════════════════════════════════════ */
+        /* HERO                                            */
+        /* ═══════════════════════════════════════════════ */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, var(--bg-cream) 0%, #f7f3ee 40%, var(--bg-warm) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: gentlePulse 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '{C}';
+            position: absolute;
+            bottom: 8%;
+            right: 8%;
+            font-family: 'Playfair Display', serif;
+            font-size: 18rem;
+            font-weight: 400;
+            color: rgba(99, 102, 241, 0.04);
+            line-height: 1;
+            pointer-events: none;
+            animation: gentleFloat 12s ease-in-out infinite;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            padding: 120px 0 80px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.12;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 540px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text-primary);
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--bg-warm-alt);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /* SECTION DEFAULTS                                */
+        /* ═══════════════════════════════════════════════ */
+
+        section { padding: 100px 0; }
+
+        .section-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 560px;
+            line-height: 1.8;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /* WHAT IS CHARLIE                                 */
+        /* ═══════════════════════════════════════════════ */
+
+        .about-platform { background: var(--bg-white); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text .section-subtitle { margin-bottom: 24px; }
+
+        .about-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-points li {
+            padding: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .about-points li i {
+            color: var(--accent);
+            margin-top: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* Dashboard mock */
+        .dashboard-mock {
+            background: var(--bg-cream);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .mock-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--bg-warm-alt);
+            margin-bottom: 16px;
+        }
+
+        .mock-topbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .mock-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .mock-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--bg-warm-alt);
+        }
+
+        .mock-dots span:first-child { background: var(--accent-light); }
+
+        .mock-body {
+            display: grid;
+            grid-template-columns: 140px 1fr 120px;
+            gap: 16px;
+            min-height: 200px;
+        }
+
+        .mock-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mock-nav-item {
+            height: 10px;
+            background: var(--bg-warm-alt);
+            border-radius: 4px;
+            width: 80%;
+        }
+
+        .mock-nav-item.active {
+            background: var(--accent-soft);
+            width: 100%;
+        }
+
+        .mock-content {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .mock-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 6px;
+            height: 80px;
+            margin-bottom: 12px;
+        }
+
+        .mock-bar {
+            flex: 1;
+            background: var(--accent-soft);
+            border-radius: 4px 4px 0 0;
+            transition: height 0.5s ease;
+        }
+
+        .mock-bar:nth-child(1) { height: 40%; }
+        .mock-bar:nth-child(2) { height: 65%; }
+        .mock-bar:nth-child(3) { height: 45%; background: var(--accent); opacity: 0.3; }
+        .mock-bar:nth-child(4) { height: 80%; }
+        .mock-bar:nth-child(5) { height: 55%; }
+        .mock-bar:nth-child(6) { height: 70%; background: var(--accent); opacity: 0.2; }
+        .mock-bar:nth-child(7) { height: 90%; }
+        .mock-bar:nth-child(8) { height: 60%; }
+
+        .mock-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mock-line {
+            height: 8px;
+            background: var(--bg-warm);
+            border-radius: 4px;
+        }
+
+        .mock-line:nth-child(1) { width: 100%; }
+        .mock-line:nth-child(2) { width: 75%; }
+        .mock-line:nth-child(3) { width: 90%; }
+
+        .mock-charlie {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mock-charlie-header {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .mock-charlie-bubble {
+            background: var(--accent-soft);
+            border-radius: 8px;
+            height: 24px;
+        }
+
+        .mock-charlie-bubble:nth-child(3) { width: 80%; }
+
+        /* ═══════════════════════════════════════════════ */
+        /* CAPABILITIES                                    */
+        /* ═══════════════════════════════════════════════ */
+
+        .capabilities { background: var(--bg-cream); }
+
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .capability-card {
+            background: var(--bg-white);
+            padding: 36px;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .capability-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .capability-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .capability-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .capability-card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /* PRODUCTS STRIP                                  */
+        /* ═══════════════════════════════════════════════ */
+
+        .products {
+            background: var(--bg-white);
+            padding: 80px 0;
+        }
+
+        .products-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .product-item {
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .product-item .product-mark {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .product-item .product-desc {
+            font-size: 0.82rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /* FOR ADVISERS / CLIENTS                          */
+        /* ═══════════════════════════════════════════════ */
+
+        .audience { background: var(--bg-cream); }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .audience-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .audience-card:nth-child(2)::before {
+            background: var(--sage);
+        }
+
+        .audience-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .audience-card .card-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent-soft);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .audience-card:nth-child(2) .card-icon {
+            background: rgba(124, 154, 126, 0.1);
+            color: var(--sage);
+        }
+
+        .audience-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .audience-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .audience-card li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .audience-card li i {
+            margin-top: 5px;
+            font-size: 0.7rem;
+        }
+
+        .audience-card:first-child li i { color: var(--accent); }
+        .audience-card:last-child li i { color: var(--sage); }
+
+        /* ═══════════════════════════════════════════════ */
+        /* HOW IT WORKS                                    */
+        /* ═══════════════════════════════════════════════ */
+
+        .how-it-works { background: var(--bg-white); }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: var(--bg-warm-alt);
+        }
+
+        .step { text-align: center; position: relative; }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--bg-cream);
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /* CTA SECTION                                     */
+        /* ═══════════════════════════════════════════════ */
+
+        .cta-section {
+            background: linear-gradient(160deg, var(--bg-warm) 0%, var(--bg-warm-alt) 100%);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-section .section-title { margin-bottom: 16px; }
+
+        .cta-section .section-subtitle {
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /* FOOTER                                          */
+        /* ═══════════════════════════════════════════════ */
+
+        .footer {
+            background: var(--text-primary);
+            color: rgba(255,255,255,0.55);
+            padding: 64px 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .nav-brand {
+            color: white;
+            font-size: 1.3rem;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand .nav-brand .brand-brace {
+            color: var(--accent-light);
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 5px 0;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: white; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            font-size: 0.82rem;
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /* SCROLL REVEAL                                   */
+        /* ═══════════════════════════════════════════════ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* ═══════════════════════════════════════════════ */
+        /* RESPONSIVE                                      */
+        /* ═══════════════════════════════════════════════ */
+
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 3rem; }
+            .section-title { font-size: 2.1rem; }
+            .about-grid { gap: 48px; }
+            .capability-grid { grid-template-columns: repeat(2, 1fr); }
+        }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .steps { grid-template-columns: 1fr; gap: 24px; }
-            .about-content { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; }
             .nav-links { display: none; }
+            .nav-mobile { display: flex; }
+            .mobile-menu { display: block; }
+            .mobile-overlay { display: block; }
+
+            .hero { min-height: auto; padding: 120px 0 60px; }
+            .hero-title { font-size: 2.4rem; }
+            .hero-subtitle { font-size: 1.05rem; }
+            .hero::after { font-size: 10rem; right: 2%; bottom: 4%; }
+
+            section { padding: 64px 0; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .dashboard-mock { order: -1; }
+
+            .capability-grid { grid-template-columns: 1fr; }
+
+            .products-grid { gap: 20px; }
+            .product-item { min-width: 100px; }
+
+            .audience-grid { grid-template-columns: 1fr; }
+            .audience-card { padding: 32px; }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                max-width: 400px;
+            }
+            .steps::before { display: none; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Navigation -->
     <nav class="nav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">{<span>Charlie</span>} Wealth</div>
-                <div class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#about">About Charlotte</a>
-                    <a href="#contact" class="cta-button">Get Started</a>
-                </div>
+        <div class="nav-inner">
+            <a href="#" class="nav-brand"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span> Wealth</a>
+            <div class="nav-links">
+                <a href="#platform">Platform</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#advisers">For Advisers</a>
+                <a href="#clients">For Clients</a>
+                <a href="#contact" class="nav-cta">Get in Touch</a>
             </div>
+            <button class="nav-mobile" aria-label="Menu" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu">
+        <a href="#platform" onclick="toggleMenu()">Platform</a>
+        <a href="#capabilities" onclick="toggleMenu()">Capabilities</a>
+        <a href="#advisers" onclick="toggleMenu()">For Advisers</a>
+        <a href="#clients" onclick="toggleMenu()">For Clients</a>
+        <a href="#contact" onclick="toggleMenu()">Get in Touch</a>
+    </div>
+
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Meet Charlotte,<br>Your AI Wealth Assistant</h1>
-                <p class="hero-subtitle">Transforming wealth management with intelligent, conversational AI that understands you and your financial goals.</p>
+                <span class="hero-label">AI-First Wealth Management</span>
+                <h1 class="hero-title">Your wealth.<br>Understood.</h1>
+                <p class="hero-subtitle">The intelligent platform that brings together everything you own, everything you owe, and everything you need to know. Powered by Charlotte, your AI wealth assistant.</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="cta-button large">Start Your Journey</a>
-                    <a href="#how-it-works" class="secondary-button large">See How It Works</a>
+                    <a href="#platform" class="btn-primary">Explore the Platform <i class="fas fa-arrow-right" style="font-size:0.85rem"></i></a>
+                    <a href="#about-charlotte" class="btn-secondary">Meet Charlotte</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features">
+    <!-- What is {Charlie}? -->
+    <section id="platform" class="about-platform">
         <div class="container">
-            <h2 class="section-title">Wealth Management, Reimagined</h2>
-            <p class="section-subtitle">Charlotte brings together AI intelligence and financial expertise in one seamless experience</p>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F4AC;</div>
-                    <h3>Natural Conversation</h3>
-                    <p>Talk to Charlotte as you would your adviser. No forms, no complexity - just natural conversation about your wealth.</p>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <span class="section-label">The Platform</span>
+                    <h2 class="section-title">A single view of wealth,<br>powered by AI.</h2>
+                    <p class="section-subtitle">
+                        <span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth brings together investments, property, banking, pensions, and personal assets into one place. Charlotte, your AI assistant, sits alongside everything you do &mdash; understanding context, answering questions, and taking action.
+                    </p>
+                    <ul class="about-points">
+                        <li><i class="fas fa-check"></i> Aggregated view across all asset classes</li>
+                        <li><i class="fas fa-check"></i> Conversational AI that understands your clients</li>
+                        <li><i class="fas fa-check"></i> Document intelligence with automatic classification</li>
+                        <li><i class="fas fa-check"></i> Built for UK advisers and their HNW clients</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F3AF;</div>
-                    <h3>Intelligent Insights</h3>
-                    <p>Charlotte analyzes your complete financial picture and surfaces insights you might have missed.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F512;</div>
-                    <h3>Secure &amp; Private</h3>
-                    <p>Bank-grade security with complete confidentiality. Your data stays yours, always.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F4CA;</div>
-                    <h3>Complete Picture</h3>
-                    <p>Properties, investments, pensions, chattels - Charlotte sees it all and helps you understand what matters.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x26A1;</div>
-                    <h3>Instant Answers</h3>
-                    <p>No waiting for appointments. Charlotte is available 24/7 to answer your wealth questions.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F91D;</div>
-                    <h3>Human Touch</h3>
-                    <p>Charlotte works alongside your adviser, combining AI efficiency with human expertise.</p>
+                <div class="reveal reveal-delay-2">
+                    <div class="dashboard-mock">
+                        <div class="mock-topbar">
+                            <span class="mock-topbar-brand"><span class="brand-brace">{</span>C<span class="brand-brace">}</span> Wealth</span>
+                            <div class="mock-dots"><span></span><span></span><span></span></div>
+                        </div>
+                        <div class="mock-body">
+                            <div class="mock-nav">
+                                <div class="mock-nav-item active"></div>
+                                <div class="mock-nav-item"></div>
+                                <div class="mock-nav-item"></div>
+                                <div class="mock-nav-item"></div>
+                                <div class="mock-nav-item"></div>
+                                <div class="mock-nav-item"></div>
+                            </div>
+                            <div class="mock-content">
+                                <div class="mock-chart">
+                                    <div class="mock-bar"></div>
+                                    <div class="mock-bar"></div>
+                                    <div class="mock-bar"></div>
+                                    <div class="mock-bar"></div>
+                                    <div class="mock-bar"></div>
+                                    <div class="mock-bar"></div>
+                                    <div class="mock-bar"></div>
+                                    <div class="mock-bar"></div>
+                                </div>
+                                <div class="mock-lines">
+                                    <div class="mock-line"></div>
+                                    <div class="mock-line"></div>
+                                    <div class="mock-line"></div>
+                                </div>
+                            </div>
+                            <div class="mock-charlie">
+                                <div class="mock-charlie-header">Charlotte</div>
+                                <div class="mock-charlie-bubble"></div>
+                                <div class="mock-charlie-bubble"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
+    <!-- Capabilities -->
+    <section id="capabilities" class="capabilities">
         <div class="container">
-            <h2 class="section-title">How Charlotte Works</h2>
-            <p class="section-subtitle">Three simple steps to smarter wealth management</p>
+            <div class="section-header reveal">
+                <span class="section-label">Capabilities</span>
+                <h2 class="section-title">Wealth management, reimagined.</h2>
+                <p class="section-subtitle">Six core capabilities that transform how advisers work and how clients experience their wealth.</p>
+            </div>
+            <div class="capability-grid">
+                <div class="capability-card reveal reveal-delay-1">
+                    <div class="capability-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Conversational AI</h3>
+                    <p>Charlotte understands context. Ask about a client, dictate a letter, query a portfolio &mdash; in natural language, by text or voice.</p>
+                </div>
+                <div class="capability-card reveal reveal-delay-2">
+                    <div class="capability-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Document Intelligence</h3>
+                    <p>Drop in a document. Charlotte reads it, classifies it, extracts key facts, and links it to the right client or asset automatically.</p>
+                </div>
+                <div class="capability-card reveal reveal-delay-3">
+                    <div class="capability-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Aggregated Wealth</h3>
+                    <p>Investments, property, banking, pensions, chattels &mdash; everything in one place. The complete picture, always current.</p>
+                </div>
+                <div class="capability-card reveal reveal-delay-1">
+                    <div class="capability-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Communications Hub</h3>
+                    <p>Every call, message, email, and meeting note captured and indexed. Full audit trail. Compliance-ready from day one.</p>
+                </div>
+                <div class="capability-card reveal reveal-delay-2">
+                    <div class="capability-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Compliance Built In</h3>
+                    <p>Suitability letters written in minutes, not days. Every interaction recorded. Charlotte knows what regulators expect.</p>
+                </div>
+                <div class="capability-card reveal reveal-delay-3">
+                    <div class="capability-icon"><i class="fas fa-microphone"></i></div>
+                    <h3>Voice First</h3>
+                    <p>Talk to Charlotte like a colleague. Wake word activation, natural conversation, immediate action. Hands-free wealth management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Strip -->
+    <section class="products">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Product Suite</span>
+                <h2 class="section-title">Your wealth, expressed.</h2>
+            </div>
+            <div class="products-grid reveal">
+                <div class="product-item">
+                    <span class="product-mark"><span class="brand-brace">{</span>SIPP<span class="brand-brace">}</span></span>
+                    <span class="product-desc">Pensions</span>
+                </div>
+                <div class="product-item">
+                    <span class="product-mark"><span class="brand-brace">{</span>GIA<span class="brand-brace">}</span></span>
+                    <span class="product-desc">Investments</span>
+                </div>
+                <div class="product-item">
+                    <span class="product-mark"><span class="brand-brace">{</span>ISA<span class="brand-brace">}</span></span>
+                    <span class="product-desc">Tax-efficient savings</span>
+                </div>
+                <div class="product-item">
+                    <span class="product-mark"><span class="brand-brace">{</span>Property<span class="brand-brace">}</span></span>
+                    <span class="product-desc">Real estate</span>
+                </div>
+                <div class="product-item">
+                    <span class="product-mark"><span class="brand-brace">{</span>Chattel<span class="brand-brace">}</span></span>
+                    <span class="product-desc">Valuable possessions</span>
+                </div>
+                <div class="product-item">
+                    <span class="product-mark"><span class="brand-brace">{</span>DocVault<span class="brand-brace">}</span></span>
+                    <span class="product-desc">Intelligent documents</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Advisers / For Clients -->
+    <section id="advisers" class="audience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Built for Everyone</span>
+                <h2 class="section-title">Two experiences. One platform.</h2>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card reveal reveal-delay-1">
+                    <div class="card-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>For Advisers</h3>
+                    <ul>
+                        <li><i class="fas fa-circle"></i> Charlotte writes your suitability letters from conversation data</li>
+                        <li><i class="fas fa-circle"></i> Every client interaction captured, indexed, and searchable</li>
+                        <li><i class="fas fa-circle"></i> Compliance audit trail built into every workflow</li>
+                        <li><i class="fas fa-circle"></i> Voice-first &mdash; talk to Charlotte, don't type</li>
+                        <li><i class="fas fa-circle"></i> Straight-through processing for account opening</li>
+                    </ul>
+                </div>
+                <div id="clients" class="audience-card reveal reveal-delay-2">
+                    <div class="card-icon"><i class="fas fa-gem"></i></div>
+                    <h3>For Clients</h3>
+                    <ul>
+                        <li><i class="fas fa-circle"></i> See everything you own in one beautiful, clear view</li>
+                        <li><i class="fas fa-circle"></i> Upload documents &mdash; Charlotte files them for you</li>
+                        <li><i class="fas fa-circle"></i> Message your adviser securely, anytime</li>
+                        <li><i class="fas fa-circle"></i> Track property, chattels, and investments together</li>
+                        <li><i class="fas fa-circle"></i> A premium experience worthy of your life's work</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Getting Started</span>
+                <h2 class="section-title">Three steps to smarter<br>wealth management.</h2>
+            </div>
             <div class="steps">
-                <div class="step">
+                <div class="step reveal reveal-delay-1">
                     <div class="step-number">1</div>
                     <h3>Connect</h3>
-                    <p>Your adviser sets up your account and connects your wealth data securely to Charlotte.</p>
+                    <p>Your wealth data flows in. Investments, property, banking, pensions &mdash; all aggregated automatically.</p>
                 </div>
-                <div class="step">
+                <div class="step reveal reveal-delay-2">
                     <div class="step-number">2</div>
                     <h3>Converse</h3>
-                    <p>Talk to Charlotte naturally - ask questions, explore scenarios, get instant insights about your wealth.</p>
+                    <p>Talk to Charlotte naturally. Ask questions, dictate notes, request actions. She understands context.</p>
                 </div>
-                <div class="step">
+                <div class="step reveal reveal-delay-3">
                     <div class="step-number">3</div>
-                    <h3>Collaborate</h3>
-                    <p>Charlotte keeps your adviser informed, ensuring you get both AI intelligence and human expertise.</p>
+                    <h3>Act</h3>
+                    <p>Charlotte executes. Letters, reports, account opening &mdash; done in seconds, not days.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Meet Charlotte</h2>
-                    <p class="lead">Charlotte is built on Claude Opus 4, the most advanced AI from Anthropic, and designed specifically for wealth management.</p>
-                    <p>She understands the nuances of UK tax, complex ownership structures, and multi-generational wealth planning. But more importantly, she understands you - your goals, your concerns, and your questions.</p>
-                    <p>Charlotte doesn't replace your adviser. She enhances the relationship, making financial advice more accessible, immediate, and intelligent.</p>
-                </div>
-                <div class="about-visual">
-                    <div class="ai-badge">
-                        <span class="badge-label">Powered by</span>
-                        <span class="badge-model">Claude Opus 4</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- CTA -->
     <section id="contact" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Meet Charlotte?</h2>
-                <p>Ask your financial adviser about adding Charlotte to your wealth management experience.</p>
-                <a href="mailto:hello@charliewealth.com" class="cta-button large">Contact Us</a>
-            </div>
+        <div class="container reveal">
+            <h2 class="section-title">Ready to see your wealth<br>differently?</h2>
+            <p class="section-subtitle">Get in touch to learn how <span class="brand-mark"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span></span> Wealth can transform your practice.</p>
+            <a href="mailto:hello@charliewealth.com" class="btn-primary" style="font-size:1rem;padding:16px 36px;">Start a Conversation <i class="fas fa-arrow-right" style="font-size:0.85rem"></i></a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="logo">{Charlie} Wealth</div>
-                    <p>AI-powered wealth management for the modern age.</p>
+                    <span class="nav-brand"><span class="brand-brace">{</span>Charlie<span class="brand-brace">}</span> Wealth</span>
+                    <p>AI-first wealth management for financial advisers and their high net worth clients. Built in the UK, for the UK.</p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="#how-it-works">How It Works</a>
-                        <a href="#about">About Charlotte</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="mailto:hello@charliewealth.com">Contact</a>
-                    </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="#platform">Overview</a>
+                    <a href="#capabilities">Capabilities</a>
+                    <a href="#advisers">For Advisers</a>
+                    <a href="#clients">For Clients</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="mailto:hello@charliewealth.com">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Charlie Wealth. All rights reserved.</p>
+                <p>&copy; 2025 Charlie Wealth Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Nav scroll behaviour
+        window.addEventListener('scroll', () => {
+            document.querySelector('.nav').classList.toggle('nav-scrolled', window.scrollY > 80);
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu
+        function toggleMenu() {
+            document.querySelector('.mobile-menu').classList.toggle('open');
+            document.querySelector('.mobile-overlay').classList.toggle('open');
+        }
+    </script>
+
 </body>
 </html>
